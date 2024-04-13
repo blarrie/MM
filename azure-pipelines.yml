@@ -16,14 +16,13 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
 - task: UnityBuildTask@3
   inputs:
-    buildTarget: 'standalone'
+    buildTarget: 'OSXUniversal'
     versionSelectionMode: 'specify'
     version: '2022.3.17f1'
     outputPath: '$(Build.BinariesDirectory)'
-    outputFileName: 'drop'
+    outputFileName: 'MasterMind'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
