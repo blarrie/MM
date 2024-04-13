@@ -14,28 +14,7 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksign: false
-- task: CopyFiles@2
-  inputs:
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-# - task: UnityBuildTask@3
-#   inputs:
-#     buildTarget: 'OSXUniversal'
-#     versionSelectionMode: 'specify'
-#     unityProjectPath: '/Applications/Unity/Hub/Editor/2022.3.17f1/Unity.app/MasterMind Ver 1'
-#     version: '2022.3.17f1'
-#     outputPath: '$(Build.BinariesDirectory)'
-#     outputFileName: 'MasterMind'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
