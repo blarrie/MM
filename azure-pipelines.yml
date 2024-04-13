@@ -11,8 +11,6 @@ pool:
   demands: Unity_2022
 
 
-
-
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -20,6 +18,7 @@ steps:
   inputs:
     buildTarget: 'OSXUniversal'
     versionSelectionMode: 'specify'
+    unityProjectPath: '/Applications/Unity/Hub/Editor/2022.3.17f1/Unity.app/MasterMind Ver 1'
     version: '2022.3.17f1'
     outputPath: '$(Build.BinariesDirectory)'
     outputFileName: 'MasterMind'
