@@ -11,9 +11,19 @@ pool:
   demands: Unity_2022
 
 
+
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- task: UnityBuildTask@3
+  inputs:
+    buildTarget: 'standalone'
+    versionSelectionMode: 'specify'
+    version: '2022.3.17f1'
+    outputPath: '$(Build.BinariesDirectory)'
+    outputFileName: 'drop'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
